@@ -1,13 +1,15 @@
-import {useParams} from 'react-router-dom';
-function ArtImageTile({galleries}) {
+import {useParams, Link} from 'react-router-dom';
+function ArtImageTile({art}) {
     //console.log(galleries);
-    const {galleryId} = useParams();
-    const gallery = galleries.find(gal => gal.gallerynumber===galleryId)
-    //console.log('gid', galleryId);
+    //const {galleryId} = useParams();
+    //const image = art.find(art => art.gallerynumber===galleryId)
+    console.log('art-inner', art);
     return(
-    <h2>FirstImage:
-        gallery.images[0]
-        {/* {galleries.find(gal => gal.gallerynumber===galleryId).name}*/}
+    <h2>
+        <div>{art.title } {art.id }:</div>
+        <Link to={'art/'+String(art.id)}>
+            <img src={art.images[0].baseimageurl}></img>
+        </Link>        
     </h2>
     
     )
