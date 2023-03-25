@@ -2,15 +2,17 @@ import React from 'react';
 import ReactDOMClient from 'react-dom/client';
 import './index.css';
 import App from './App';
-import {BrowserRouter} from 'react-router-dom'
+import {BrowserRouter, createBrowserRouter,
+  RouterProvider} from 'react-router-dom'
+import ErrorPage from "./error-page";
 
-const Root = () => {
-  return (
+const Root = () =>
+  { return(
     <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <App />
+  </BrowserRouter>
   )
-} 
+  }
 
 
 
@@ -21,6 +23,6 @@ const root = ReactDOMClient.createRoot(container);
 // Initial render: Render an element to the root.
 root.render(
   <React.StrictMode>
-    <Root />    
+     <Root />   
   </React.StrictMode>
 );

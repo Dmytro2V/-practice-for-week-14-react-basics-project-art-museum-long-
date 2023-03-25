@@ -1,11 +1,21 @@
 import harvardArt from './data/harvardArt'
 //console.log(harvardArt);
+import {Routes, Route} from 'react-router-dom';
 import GalleryNavigation from './components/GalleryNavigation';
+import GalleryView from './components/GalleryView'
 
 
 function App() {
   return (
-    <GalleryNavigation galleries={harvardArt.records}/>
+    <div className='page-wrapper'>
+      <GalleryNavigation galleries={harvardArt.records}/>
+      <Routes>
+        <Route path="/" element={'Home'} />
+        <Route path='/galleries/:galleryId' element = {<GalleryView galleries={harvardArt.records}/> } />
+         
+      </Routes>
+  
+    </div>
   );
 }
 
