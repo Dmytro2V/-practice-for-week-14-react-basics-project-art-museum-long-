@@ -1,6 +1,6 @@
 import {useParams} from 'react-router-dom';
 function GalleryView({galleries}) {
-    console.log(galleries);
+    //console.log(galleries);
     const {galleryId} = useParams(); 
     //console.log('gid', galleryId);
     return(
